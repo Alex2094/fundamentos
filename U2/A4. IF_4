@@ -1,0 +1,211 @@
+El programador sigue teniendo complicaciones para ajustar su código cuando ingresan valores, pero necesita ayuda, ahora su jefe, 
+que no conoce mucho de programación, quiere un programa para calcular los rendimientos de 4 vendedores y ver la diferencia entre estos.
+El programa debe recibir los 4 valores de los vendedores, que se calcula en ventas por mes, después, el programa debe ordenarlos de menor 
+a mayor, siendo 4 el mayor y 1 el menor, una vez hecho esto debe hacer las siguientes operaciones.
+
+Mostrar los números ordenados
+El resultado del 4 menos el 1
+El resultado del 2 menos el 1
+El resultado del 4 menos el 3
+El resultado del 3 menos el 2
+La suma de todas las ventas y el promedio general
+
+Algoritmo vendedores
+    Definir venta1, venta2, venta3, venta4 Como Real
+    Definir p1, p2, p3, p4 Como Real
+    Definir suma, promedio Como Real
+    Definir dif1, dif2, dif3, dif4 Como Real
+	
+    
+    Escribir "Ingresa las ventas del vendedor 1"
+    Leer venta1
+    Escribir "Ingresa las ventas del vendedor 2"
+    Leer venta2
+    Escribir "Ingresa las ventas del vendedor 3"
+    Leer venta3
+    Escribir "Ingresa las ventas del vendedor 4"
+    Leer venta4
+	
+    
+    Si venta1 >= venta2 Y venta1 >= venta3 Y venta1 >= venta4 Entonces
+        p1 <- venta1
+        Si venta2 >= venta3 Y venta2 >= venta4 Entonces
+            p2 <- venta2
+            Si venta3 >= venta4 Entonces
+                p3 <- venta3
+                p4 <- venta4
+            Sino
+                p3 <- venta4
+                p4 <- venta3
+            FinSi
+        Sino
+            Si venta3 >= venta2 Y venta3 >= venta4 Entonces
+                p2 <- venta3
+                Si venta2 >= venta4 Entonces
+                    p3 <- venta2
+                    p4 <- venta4
+                Sino
+                    p3 <- venta4
+                    p4 <- venta2
+                FinSi
+            Sino
+                p2 <- venta4
+                Si venta2 >= venta3 Entonces
+                    p3 <- venta2
+                    p4 <- venta3
+                Sino
+                    p3 <- venta3
+                    p4 <- venta2
+                FinSi
+            FinSi
+        FinSi
+    Sino
+        Si venta2 >= venta1 Y venta2 >= venta3 Y venta2 >= venta4 Entonces
+            p1 <- venta2
+            Si venta1 >= venta3 Y venta1 >= venta4 Entonces
+                p2 <- venta1
+                Si venta3 >= venta4 Entonces
+                    p3 <- venta3
+                    p4 <- venta4
+                Sino
+                    p3 <- venta4
+                    p4 <- venta3
+                FinSi
+            Sino
+                Si venta3 >= venta1 Y venta3 >= venta4 Entonces
+                    p2 <- venta3
+                    Si venta1 >= venta4 Entonces
+                        p3 <- venta1
+                        p4 <- venta4
+                    Sino
+                        p3 <- venta4
+                        p4 <- venta1
+                    FinSi
+                Sino
+                    p2 <- venta4
+                    Si venta1 >= venta3 Entonces
+                        p3 <- venta1
+                        p4 <- venta3
+                    Sino
+                        p3 <- venta3
+                        p4 <- venta1
+                    FinSi
+                FinSi
+            FinSi
+        Sino
+            Si venta3 >= venta1 Y venta3 >= venta2 Y venta3 >= venta4 Entonces
+                p1 <- venta3
+                Si venta1 >= venta2 Y venta1 >= venta4 Entonces
+                    p2 <- venta1
+                    Si venta2 >= venta4 Entonces
+                        p3 <- venta2
+                        p4 <- venta4
+                    Sino
+                        p3 <- venta4
+                        p4 <- venta2
+                    FinSi
+                Sino
+                    Si venta2 >= venta1 Y venta2 >= venta4 Entonces
+                        p2 <- venta2
+                        Si venta1 >= venta4 Entonces
+                            p3 <- venta1
+                            p4 <- venta4
+                        Sino
+                            p3 <- venta4
+                            p4 <- venta1
+                        FinSi
+                    Sino
+                        p2 <- venta4
+                        Si venta1 >= venta2 Entonces
+                            p3 <- venta1
+                            p4 <- venta2
+                        Sino
+                            p3 <- venta2
+                            p4 <- venta1
+                        FinSi
+                    FinSi
+                FinSi
+            Sino
+                p1 <- venta4
+                Si venta1 >= venta2 Y venta1 >= venta3 Entonces
+                    p2 <- venta1
+                    Si venta2 >= venta3 Entonces
+                        p3 <- venta2
+                        p4 <- venta3
+                    Sino
+                        p3 <- venta3
+                        p4 <- venta2
+                    FinSi
+                Sino
+                    Si venta2 >= venta1 Y venta2 >= venta3 Entonces
+                        p2 <- venta2
+                        Si venta1 >= venta3 Entonces
+                            p3 <- venta1
+                            p4 <- venta3
+                        Sino
+                            p3 <- venta3
+                            p4 <- venta1
+                        FinSi
+                    Sino
+                        p2 <- venta3
+                        Si venta1 >= venta2 Entonces
+                            p3 <- venta1
+                            p4 <- venta2
+                        Sino
+                            p3 <- venta2
+                            p4 <- venta1
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+	
+    // Mostrar los resultados ordenados
+    Escribir "Ventas ordenadas de mayor a menor:"
+    Escribir "ventas 4: ", p1
+    Escribir "ventas 3: ", p2
+    Escribir "ventas 2: ", p3
+    Escribir "ventas 1: ", p4
+	
+    
+    dif1 <- p1 - p4
+    dif2 <- p3 - p4
+    dif3 <- p1 - p2
+    dif4 <- p2 - p3
+	
+    
+    suma <- p1 + p2 + p3 + p4
+    promedio <- suma / 4
+	
+    // Mostrar resultados
+    Escribir "Diferencia entre el mayor y el menor (4 - 1): ", dif1 
+    Escribir "Diferencia entre el segundo y el menor (2 - 1): ", dif2 
+    Escribir "Diferencia entre el mayor y el tercero (4 - 3): ", dif3 
+    Escribir "Diferencia entre el tercero y el segundo (3 - 2): ", dif4 
+	
+    Escribir "Suma total de las ventas: ", suma
+    Escribir "Promedio final de las ventas: ", promedio
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingresa las ventas del vendedor 1
+> 500
+Ingresa las ventas del vendedor 2
+> 200
+Ingresa las ventas del vendedor 3
+> 70
+Ingresa las ventas del vendedor 4
+> 50
+Ventas ordenadas de mayor a menor:
+ventas 4: 500
+ventas 3: 200
+ventas 2: 70
+ventas 1: 50
+Diferencia entre el mayor y el menor (4 - 1): 450
+Diferencia entre el segundo y el menor (2 - 1): 20
+Diferencia entre el mayor y el tercero (4 - 3): 300
+Diferencia entre el tercero y el segundo (3 - 2): 130
+Suma total de las ventas: 820
+Promedio final de las ventas: 205
+*** Ejecución Finalizada. ***
