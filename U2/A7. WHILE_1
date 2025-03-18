@@ -1,0 +1,74 @@
+La empresa de manufactura "ACME", necesita un nuevo control para gestionar su inventario por el área correspondiente, 
+últimamente el turno de la tarde parece "multiplicar" la producción por las noches cuando sale el supervisor, lo cual ha generado pérdidas en la empresa.
+Ahora, necesitan añadir accesos para registrar la producción diaria, para ello necesitan un sistema protegido por contraseña 
+de al menos 6 caracteres, de 3 letras, al menos 1 mayúsculas y 3 números que no sean consecutivos. Deberá poner un mensaje que diga que se debe llamar al supervisor si la contraseña es incorrecta, 
+de lo contrario, deberá mostrar un mensaje de bienvenida.
+Una vez ingresado el sistema, deberá poder registrar las piezas fabricadas, para ello, el sistema deberá pedir la 
+cantidad de piezas que se quieren añadir y permitir el registro, el supervisor deberá poder ingresar todas las piezas que requiera y para terminar el ingreso deberá ingresar 4 ceros consecutivos.
+Al terminar, deberá mostrar la suma total de las piezas fabricadas, si el total de esas ventas es mayor a 10,000 unidades 
+deberá mostrar un mensaje de que se ha cumplido la meta, de lo contrario, deberá mostrar una alerta para producción.
+
+Algoritmo GestionInventarioACME
+    Definir contrasena Como Cadena
+    Definir intentos Como Entero
+    Definir acceso Como Logico
+    Definir piezas, totalPiezas Como Entero
+    
+    // Configuración de la contraseña válida
+    contrasenaValida <- "Abc135"  // Ejemplo de contraseña válida (cumple con los requisitos)
+    
+    // Ajustar intentos dentro del código
+    intentos <- 3  // Se asigna aquí para evitar inicialización explícita al principio
+    
+    // Primer Mientras: Validación de la contraseña
+    Mientras intentos > 0 Y acceso = Falso Hacer
+        Escribir "Ingrese la contraseña (3 letras, al menos 1 mayúscula y 3 números no consecutivos):"
+        Leer contrasena
+        
+        Si contrasena = contrasenaValida Entonces
+            acceso <- Verdadero
+            Escribir "Bienvenido al sistema de gestión de inventario."
+        Sino
+            intentos <- intentos - 1
+            Si intentos > 0 Entonces
+                Escribir "Contraseña incorrecta. Le quedan ", intentos, " intentos."
+            Sino
+                Escribir "Contraseña incorrecta. Debe llamar al supervisor."
+            FinSi
+        FinSi
+    FinMientras
+    
+    // Segundo Mientras: Registro de piezas
+    Mientras acceso Hacer
+        Escribir "Ingrese la cantidad de piezas fabricadas (ingrese 0000 para terminar):"
+        Leer piezas
+        
+        Si piezas = 0000 Entonces
+            acceso <- Falso
+        Sino
+            totalPiezas <- totalPiezas + piezas
+        FinSi
+    FinMientras
+    
+    // Mensaje final
+    Escribir "Total de piezas fabricadas: ", totalPiezas
+    Si totalPiezas > 10000 Entonces
+        Escribir "¡Meta cumplida! Se han fabricado más de 10,000 unidades."
+    Sino
+        Escribir "Alerta: No se ha cumplido la meta de producción."
+    FinSi
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese la contraseña (3 letras, al menos 1 mayúscula y 3 números no consecutivos):
+> Abc135
+Bienvenido al sistema de gestión de inventario.
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para terminar):
+> 5000
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para terminar):
+> 500
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para terminar):
+> 0000
+Total de piezas fabricadas: 5500
+Alerta: No se ha cumplido la meta de producción.
+*** Ejecución Finalizada. ***
