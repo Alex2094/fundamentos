@@ -1,0 +1,89 @@
+La abarrotera "Kamarena" necesita trabajar en un sistema que le ayude a registrar de manera fácil y rápida todos sus pedidos, hubo una explosión 
+en el mercado al otro lado de la ciudad y ellos han quedado como el único lugar disponible para comprar, esa idea de poner una bomba ha salido terriblemente bien (no hubo ningún herido).
+Mientras el dueño sigue luchando entre entregarse a las autoridades por lo sucedido y pedir perdón a las familias involucradas, ha pedido a su asesor externo, el "Teclas" que le ayude con un sistema.
+Para ingresar al sistema debe pedir una contraseña (Mientras), que debe ser una fecha de nacimiento en formato YYYY-MM-DD, una vez en el sistema, debe preguntar si (Si) quiere hacer registros de zanahorias o de tomates.
+Si elige zanahorias, deberá pedir que se ingresen cuántas cajas deberá ingresar (Para), como cada caja tiene un valor diferente, habrá que ingresarlo manualmente una por una.
+Si elige tomates, deberá ingresar cuantas cajas se necesiten y cuando escriba el número 100001 deberá terminar de registrar (Mientras).
+En ambos casos, deberá qué opción se eligió y mostrar cuántas cajas se añadieron, cuánto fue el total del peso y cuánto fue el costo total de esa venta, las zanahorias 
+cuestan $15.84 el kilo y los tomates cuestan $11.34 el kilo, si (Si) la venta supera los $10,000, 
+se le hará un descuento automático del 7.5% del valor total.
+Finalmente, deberá preguntar si (Si) el cliente necesita o no envío, si requiere envío deberá añadir $150 más a su pedido, de lo contrario, mostrará el precio anterior.
+
+Algoritmo Kamarena
+    
+    Mientras contraseña <> "2002-04-15" Hacer
+        Escribir "Ingrese la contraseña (formato YYYY-MM-DD):"
+        Leer contraseña
+    FinMientras
+    
+    Mientras peso <> 100001 Hacer
+        Escribir "Ingrese el peso de la caja (en kg) o ingrese 100001 para terminar:"
+        Leer peso
+        
+        Si peso <> 100001 Entonces
+            Escribir "¿Es zanahoria o tomate?"
+            Leer tipo
+            
+            Si tipo = "zanahoria" Entonces
+                Escribir "Ingrese el número de cajas de zanahorias:"
+                Leer cajas
+                Para i <- 1 Hasta cajas Hacer
+                    Escribir "Ingrese el peso de la caja ", i, " (en kg):"
+                    Leer peso
+                    costoTotal <- costoTotal + (peso * 15.84)
+                    pesoTotal <- pesoTotal + peso
+                FinPara
+            Sino
+                costoTotal <- costoTotal + (peso * 11.34)
+                pesoTotal <- pesoTotal + peso
+                cajas <- cajas + 1
+            FinSi
+        FinSi
+    FinMientras
+    
+    Escribir "Cajas añadidas: ", cajas
+    Escribir "Peso total: ", pesoTotal, " kg"
+    Escribir "Costo total: $", costoTotal
+ 
+    Si costoTotal > 10000 Entonces
+        descuento <- costoTotal * 0.075
+        costoTotal <- costoTotal - descuento
+        Escribir "Se aplicó un descuento del 7.5%"
+        Escribir "Costo total con descuento: $", costoTotal
+    FinSi
+    
+    Escribir "¿Necesita envío? (si/no):"
+    Leer necesitaEnvio
+    
+    Si necesitaEnvio = "si" Entonces
+        costoTotal <- costoTotal + 150
+        Escribir "Se ha añadido un costo de envío de $150."
+        Escribir "Costo final con envío: $", costoTotal
+    Sino
+        Escribir "Costo final sin envío: $", costoTotal
+    FinSi
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese la contraseña (formato YYYY-MM-DD):
+> 2002-04-15
+Ingrese el peso de la caja (en kg) o ingrese 100001 para terminar:
+> 80
+¿Es zanahoria o tomate?
+> zanahoria
+Ingrese el número de cajas de zanahorias:
+> 2
+Ingrese el peso de la caja 1 (en kg):
+> 100
+Ingrese el peso de la caja 2 (en kg):
+> 200
+Ingrese el peso de la caja (en kg) o ingrese 100001 para terminar:
+> 100001
+Cajas añadidas: 2
+Peso total: 300 kg
+Costo total: $4752
+¿Necesita envío? (si/no):
+> si
+Se ha añadido un costo de envío de $150.
+Costo final con envío: $4902
+*** Ejecución Finalizada. ***
