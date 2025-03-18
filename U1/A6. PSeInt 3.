@@ -1,0 +1,55 @@
+Realiza un pseudocódigo que calcule el promedio de un alumno, el usuario ingresará su nombre y edad, después deberá ingresar sus 3 instrumentos, 
+examen que vale el 30%, tareas que vale el 20% y trabajos en clase que vale el 50%, deberá calcular el promedio final.
+Usando operadores, deberá validar si el alumno aprobó con una calificación igual o mayor a 6.
+La respuesta debe mostrar el nombre del alumno, su edad, y el valor de cada instrumento, su promedio final, y mostrar si el alumno aprobó con un Verdadero o Falso.
+
+Algoritmo Promedio_final
+    Definir nombre Como Cadena
+    Definir edad Como Entero
+    Definir examen, tareas, tra_c, promedio Como Real
+    Definir aprobado Como Lógico
+	
+    Escribir "Ingresa tu nombre"
+    Leer nombre
+    Escribir "Ingresa tu edad"
+    Leer edad
+    Escribir "Calificación examen"
+    Leer examen
+    Escribir "Calificación tareas"
+    Leer tareas
+    Escribir "Calificación trabajo de clase"
+    Leer tra_c
+	
+    // Cálculo
+    promedio <- (examen * 0.30) + (tareas * 0.20) + (tra_c * 0.50)
+    aprobado <- promedio >= 6 
+	
+    // Mostrar resultados
+    Escribir "Nombre: ", nombre
+    Escribir "Edad: ", edad, " años"
+    Escribir "Calificación examen: ", examen, " (30%)"
+    Escribir "Calificación tareas: ", tareas, " (20%)"
+    Escribir "Calificación de trabajos de clase: ", tra_c, " (50%)"
+    Escribir "Promedio final: ", promedio
+    Escribir "Aprobado: ", aprobado
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingresa tu nombre
+> Alexis
+Ingresa tu edad
+> 18
+Calificación examen
+> 50
+Calificación tareas
+> 80
+Calificación trabajo de clase
+> 80
+Nombre: Alexis
+Edad: 18 años
+Calificación examen: 50 (30%)
+Calificación tareas: 80 (20%)
+Calificación de trabajos de clase: 80 (50%)
+Promedio final: 71
+Aprobado: VERDADERO
+*** Ejecución Finalizada. ***
