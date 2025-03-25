@@ -1,0 +1,78 @@
+SubProceso calcularCubo()
+			Definir arista, area, volumen Como Real
+			
+			Escribir "Ingrese la longitud de la arista del cubo: "
+			Leer arista
+			
+			area <- 6 * arista^2
+			volumen <- arista^3
+			
+			Escribir "Área del cubo: ", area
+			Escribir "Volumen del cubo: ", volumen
+FinSubProceso
+
+SubProceso calcularEsfera()
+	Definir radio, area, volumen Como Real
+	
+	Escribir "Ingrese el radio de la esfera: "
+	Leer radio
+	
+	area <- 4 * 3.1416 * radio^2
+	volumen <- (4/3) * 3.1416 * radio^3
+	
+	Escribir "Área de la esfera: ", area
+	Escribir "Volumen de la esfera: ", volumen
+FinSubProceso
+
+SubProceso calcularCilindro()
+	Definir radio, altura, area, volumen Como Real
+	
+	Escribir "Ingrese el radio de la base del cilindro: "
+	Leer radio
+	Escribir "Ingrese la altura del cilindro: "
+	Leer altura
+	
+	area <- 2 * 3.1416 * radio * (radio + altura)
+	volumen <- 3.1416 * radio^2 * altura
+	
+	Escribir "Área del cilindro: ", area
+	Escribir "Volumen del cilindro: ", volumen
+FinSubProceso
+
+Algoritmo CalculoGeometrico
+Definir opcion Como Entero
+Definir continuar Como Logico
+
+continuar <- Verdadero
+
+Mientras continuar = Verdadero Hacer
+	Escribir "=== CALCULADORA DE ÁREA Y VOLUMEN ==="
+	Escribir "1. Cubo"
+	Escribir "2. Esfera"
+	Escribir "3. Cilindro"
+	Escribir "4. Salir"
+	Escribir "Seleccione una figura geométrica: "
+	Leer opcion
+	
+	Segun opcion Hacer
+		1: calcularCubo()
+		2: calcularEsfera()
+		3: calcularCilindro()
+		4: 
+			Escribir "Saliendo del programa..."
+			continuar <- Falso
+		De Otro Modo:
+			Escribir "Opción no válida. Intente nuevamente."
+	FinSegun
+	
+	Si opcion >= 1 Y opcion <= 3 Y continuar = Verdadero Entonces
+		Escribir "¿Desea calcular otra figura? (Sí/No)"
+		Leer respuesta
+		Si Minusculas(respuesta) = "no" Entonces
+			continuar <- Falso
+		FinSi
+	FinSi
+FinMientras
+
+Escribir "Programa terminado."
+FinAlgoritmo
