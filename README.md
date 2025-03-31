@@ -20,7 +20,7 @@ Unidad 1
 
 Descripción breve de la unidad: En esta unidad se aprendieron conceptos como...
 
-Ir a Unidad 1
+[Unidad 1 (https://github.com/Alex2094/fundamentos/tree/main/U1)]
 
 Unidad 2
 
