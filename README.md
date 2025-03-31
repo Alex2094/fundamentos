@@ -2,7 +2,7 @@
 codigos 
 
 
-[![images.jpg](https://i.postimg.cc/x835pBBx/images.jpg)](https://postimg.cc/zH3TV2zK)
+[![1473078000859-1.avif](https://i.postimg.cc/bvSTfZK2/1473078000859-1.avif)](https://postimg.cc/f3ZXxRWw)
 
 Materia:Fundamentos de programacion
 
