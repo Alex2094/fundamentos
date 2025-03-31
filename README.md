@@ -6,7 +6,6 @@ codigos
 
 Materia:Fundamentos de programacion
 
-
 Nombre completo: Alexis Gabriel Avalos Miramontes
 
 Carrera:
