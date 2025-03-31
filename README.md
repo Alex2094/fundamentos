@@ -1,6 +1,12 @@
 # fundamentos
 codigos 
+
+
+[![images.jpg](https://i.postimg.cc/x835pBBx/images.jpg)](https://postimg.cc/zH3TV2zK)
+
+
 Materia:Fundamentos de programacion
+
 
 Nombre completo: Alexis Gabriel Avalos Miramontes
 
