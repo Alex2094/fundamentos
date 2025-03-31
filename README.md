@@ -38,5 +38,4 @@ En esta unidad se aprendieron conceptos como los subalgoritmos y como se hacen y
 
 [Unidad 3](https://github.com/Alex2094/fundamentos/tree/main/U3)
 
-Comentarios personales sobre la materia y propuestas de mejoras:
   
